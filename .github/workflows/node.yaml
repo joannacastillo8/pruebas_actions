@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
+    strategy: #Esto crea 2 ejecuciones del job automáticamente
       matrix:
         node-version: [18, 20]
 
@@ -14,13 +14,22 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
-        with:
+        with: #$ {{ matrix.node-version }} cada ejecución usa una versión distinta
           node-version: ${{ matrix.node-version }}
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v4 #Guarda las dependencias descargadas y Evita instalar desde cero cada vez
         with:
-          path: ~/.npm
+          path: ~/.npm #dónde se guarda cache
+          #hashFiles(...) → detecta cambios en dependencias
+          #runner.os → separa cache por sistema
+          #Si package-lock.json cambia → se invalida cache
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-      - run: npm ci
-      - run: npm test
+      - run: npm ci #Usa exactamente package-lock.json
+      - run: npm test # Llama al script definido en package.json
+
+      # Matrix → ejecuciones múltiples
+      # Cache → optimización
+      # npm ci → reproducibilidad
+      # setup-node → runtime
+      #checkout → obligatorio
