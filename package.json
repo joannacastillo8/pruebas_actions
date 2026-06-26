@@ -4,7 +4,7 @@
   "description": "path_pruebas para las actions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests yet\""
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/joannacastillo8/pruebas_actions/issues"
   },
-  "homepage": "https://github.com/joannacastillo8/pruebas_actions#readme"
+  "homepage": "https://github.com/joannacastillo8/pruebas_actions#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
 }
