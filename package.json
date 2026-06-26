@@ -1,0 +1,21 @@
+{
+  "name": "pruebas_actions",
+  "version": "1.0.0",
+  "description": "path_pruebas para las actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joannacastillo8/pruebas_actions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/joannacastillo8/pruebas_actions/issues"
+  },
+  "homepage": "https://github.com/joannacastillo8/pruebas_actions#readme"
+}
