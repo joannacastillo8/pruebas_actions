@@ -1,6 +1,6 @@
 {
   "name": "@joannacastillo8/pruebas_actions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "path_pruebas para las actions",
   "main": "index.js",
   "scripts": {
