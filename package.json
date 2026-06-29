@@ -1,10 +1,13 @@
 {
-  "name": "pruebas_actions",
-  "version": "1.0.0",
+  "name": "@joannacastillo8/pruebas_actions",
+  "version": "1.0.1",
   "description": "path_pruebas para las actions",
   "main": "index.js",
   "scripts": {
-    "test": "echo jest"
+    "test": "jest"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
