@@ -4,7 +4,7 @@
   "description": "path_pruebas para las actions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"jest\""
+    "test": "echo jest"
   },
   "repository": {
     "type": "git",
