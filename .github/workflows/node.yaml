@@ -1,6 +1,10 @@
 name: Node.js CI
 
-on: [push]
+on: 
+  push:
+  check_run:
+    types: [rerequested, requested_action]
+
 
 jobs:
   build:
@@ -11,6 +15,11 @@ jobs:
         node-version: [18, 20]
 
     steps:
+      
+      - name: Debug evento  
+        run: |
+          echo "Evento: ${{ github.event_name }} - Acción: ${{ github.event.action }}"
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
