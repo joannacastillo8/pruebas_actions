@@ -34,6 +34,11 @@ jobs:
           #Si package-lock.json cambia → se invalida cache
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
+      - name: Use my composite action
+        uses: ./.github/actions/my-composite-action
+        with:
+          node-version: '18'
+
       - run: npm ci #Usa exactamente package-lock.json
       - run: npm test # Llama al script definido en package.json
 
