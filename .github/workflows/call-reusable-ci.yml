@@ -1,5 +1,5 @@
 name: Reusable Build and Test
-
+#Para reutilizar desde el mismo repositorio
 on:
   workflow_call:
     inputs:
