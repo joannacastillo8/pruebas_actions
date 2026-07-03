@@ -1,7 +1,7 @@
 name: Reusable Build and Test
 
 on:
-  push:
+  
   workflow_call:
     inputs:
       node_version:
