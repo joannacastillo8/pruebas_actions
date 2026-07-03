@@ -4,7 +4,9 @@
   "description": "path_pruebas para las actions",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:jest": "jest",
+    "test:vitest": "vitest run"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
