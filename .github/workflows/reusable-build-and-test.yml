@@ -30,8 +30,8 @@ jobs:
         with:
           node-version: ${{ inputs.node_version }}
       - run: npm ci
-      - if: ${{ inputs.run_tests }}
-        run: npm test
+      
+      - run: npm test
       - name: Set output
         id: result
         run: echo "test_result=success" >> $GITHUB_OUTPUT
