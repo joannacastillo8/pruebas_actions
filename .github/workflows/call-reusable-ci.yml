@@ -1,39 +1,23 @@
-name: Reusable Build and Test
-#Para reutilizar desde el mismo repositorio
+name: Call CI Reusable Workflow
+
 on:
   push:
-  workflow_call:
-    inputs:
-      node_version:
-        description: 'Version of Node.js'
-        required: true
-        type: string
-      run_tests:
-        description: 'Whether to run tests'
-        required: false
-        default: true
-        type: boolean
-    secrets:
-      NPM_TOKEN:
-        required: false
-    outputs:
-      test_result:
-        description: 'Result of tests'
-        value: ${{ jobs.build_and_test.outputs.test_result }}
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  build_and_test:
+  do-build-test:
+    uses: ./.github/workflows/reusable-build-and-test.yml
+    with:
+      node_version: '24'
+      run_tests: true
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  post-check:
+    needs: do-build-test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v5
-        with:
-          node-version: ${{ inputs.node_version }}
-      - run: npm ci
-      
-      -  run: npm test
-      - name: Set output
-        id: result
-        run: echo "test_result=success" >> $GITHUB_OUTPUT
-    outputs:
-      test_result: ${{ steps.result.outputs.test_result }}
+      - run: echo "Test result was ${{ needs.do-build-test.outputs.test_result }}"
