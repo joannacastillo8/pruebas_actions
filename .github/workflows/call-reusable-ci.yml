@@ -1,7 +1,7 @@
 name: Reusable Build and Test
 #Para reutilizar desde el mismo repositorio
 on:
-    [push]
+  push:
   workflow_call:
     inputs:
       node_version:
