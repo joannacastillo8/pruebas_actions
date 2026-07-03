@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:jest": "jest",
-    "test:vitest": "vitest run"
+    "test:vitest": "vitest run",
+    "lint": "eslint ."
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/joannacastillo8/pruebas_actions#readme",
   "devDependencies": {
+    "eslint": "^10.6.0",
     "jest": "^30.4.2",
     "vitest": "^4.1.9"
   }
